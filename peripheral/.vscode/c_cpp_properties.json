@@ -1,21 +1,23 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
 {
     "configurations": [
         {
-            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
-        },
-        {
-            "name": "Win32",
+            "name": "PlatformIO",
             "includePath": [
-                "c:/Code/AquilaLite/include",
-                "c:/Code/AquilaLite/src",
-                "c:/Code/AquilaLite/lib/ArduCAM",
+                "c:/Code/AquilaHeavy/peripheral/include",
+                "c:/Code/AquilaHeavy/peripheral/src",
+                "c:/Code/AquilaHeavy/peripheral/.pio/libdeps/micro/I2Cdevlib-MPU6050",
+                "c:/Code/AquilaHeavy/peripheral/.pio/libdeps/micro/I2Cdevlib-Core",
                 "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
-                "c:/Code/AquilaLite/.pio/libdeps/megaatmega2560/SD/src",
-                "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "c:/Code/AquilaHeavy/peripheral/.pio/libdeps/micro/Servo/src",
+                "c:/Code/AquilaHeavy/peripheral/.pio/libdeps/micro/SD/src",
                 "C:/Users/amarm/.platformio/packages/framework-arduino-avr/cores/arduino",
-                "C:/Users/amarm/.platformio/packages/framework-arduino-avr/variants/mega",
-                "c:/Code/AquilaLite/lib/ArduCAM_Touch",
-                "c:/Code/AquilaLite/lib/UTFT4ArduCAM_SPI",
+                "C:/Users/amarm/.platformio/packages/framework-arduino-avr/variants/micro",
+                "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                 "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
@@ -25,16 +27,16 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "c:/Code/AquilaLite/include",
-                    "c:/Code/AquilaLite/src",
-                    "c:/Code/AquilaLite/lib/ArduCAM",
+                    "c:/Code/AquilaHeavy/peripheral/include",
+                    "c:/Code/AquilaHeavy/peripheral/src",
+                    "c:/Code/AquilaHeavy/peripheral/.pio/libdeps/micro/I2Cdevlib-MPU6050",
+                    "c:/Code/AquilaHeavy/peripheral/.pio/libdeps/micro/I2Cdevlib-Core",
                     "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
-                    "c:/Code/AquilaLite/.pio/libdeps/megaatmega2560/SD/src",
-                    "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "c:/Code/AquilaHeavy/peripheral/.pio/libdeps/micro/Servo/src",
+                    "c:/Code/AquilaHeavy/peripheral/.pio/libdeps/micro/SD/src",
                     "C:/Users/amarm/.platformio/packages/framework-arduino-avr/cores/arduino",
-                    "C:/Users/amarm/.platformio/packages/framework-arduino-avr/variants/mega",
-                    "c:/Code/AquilaLite/lib/ArduCAM_Touch",
-                    "c:/Code/AquilaLite/lib/UTFT4ArduCAM_SPI",
+                    "C:/Users/amarm/.platformio/packages/framework-arduino-avr/variants/micro",
+                    "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                     "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
@@ -43,20 +45,23 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=50003",
-                "ARDUINO_AVR_MEGA2560",
+                "PLATFORMIO=50100",
+                "ARDUINO_AVR_MICRO",
                 "F_CPU=16000000L",
                 "ARDUINO_ARCH_AVR",
                 "ARDUINO=10808",
-                "__AVR_ATmega2560__",
+                "USB_VID=0x2341",
+                "USB_PID=0x8037",
+                "USB_PRODUCT=\"Arduino Micro\"",
+                "USB_MANUFACTURER=\"Arduino\"",
+                "__AVR_ATmega32U4__",
                 ""
             ],
-            "intelliSenseMode": "gcc-x64",
             "cStandard": "c11",
             "cppStandard": "c++11",
             "compilerPath": "C:/Users/amarm/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
             "compilerArgs": [
-                "-mmcu=atmega2560",
+                "-mmcu=atmega32u4",
                 ""
             ]
         }

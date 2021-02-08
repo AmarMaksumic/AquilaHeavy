@@ -48,6 +48,9 @@ void setup() {
 }
 
 void loop() {  
+
+  String serial_data = "";
+
   myCAMSaveToSDFile();  
   
   float temperature = bme.readTemperature();
@@ -78,6 +81,12 @@ void loop() {
                     "Altitude: " + String(altitude) + "m";
 
   Serial.println(results);
+
+  while(Serial.available() > 0) {
+    serial_data += Serial.readString();
+  }
+
+  results += "\n" + serial_data;
 
   digitalWrite(card_pin, HIGH); 
   Serial.println(write_file(card_pin, "sensor_dat.txt", results));
