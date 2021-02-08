@@ -9,8 +9,8 @@ gyro greek;
 float setPoint = 0;
 
 void setup() {
-  x.init(0);
-  y.init(1);
+  x.init(9);
+  y.init(10);
   greek.init();
   Serial.begin(9600);
   Serial.println('HI! I WILL SEND U DATA B!');
