@@ -1,5 +1,3 @@
-class servoX {
-  public:
-    void init(int pin);
-    void align(float xTilt, float setPoint);
-};
+void reset_servoX();
+void init_servoX(int pin);
+float align_servoX(float xTilt, float setPoint);

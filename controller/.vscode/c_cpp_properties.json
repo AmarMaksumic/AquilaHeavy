@@ -10,6 +10,7 @@
             "includePath": [
                 "c:/Code/AquilaHeavy/controller/include",
                 "c:/Code/AquilaHeavy/controller/src",
+                "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                 "c:/Code/AquilaHeavy/controller/lib/ArduCAM",
                 "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "c:/Code/AquilaHeavy/controller/.pio/libdeps/megaatmega2560/SD/src",
@@ -20,7 +21,6 @@
                 "c:/Code/AquilaHeavy/controller/lib/UTFT4ArduCAM_SPI",
                 "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                 "C:/Users/amarm/.platformio/packages/tool-unity",
                 ""
             ],
@@ -29,6 +29,7 @@
                 "path": [
                     "c:/Code/AquilaHeavy/controller/include",
                     "c:/Code/AquilaHeavy/controller/src",
+                    "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                     "c:/Code/AquilaHeavy/controller/lib/ArduCAM",
                     "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "c:/Code/AquilaHeavy/controller/.pio/libdeps/megaatmega2560/SD/src",
@@ -39,13 +40,12 @@
                     "c:/Code/AquilaHeavy/controller/lib/UTFT4ArduCAM_SPI",
                     "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                    "C:/Users/amarm/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                     "C:/Users/amarm/.platformio/packages/tool-unity",
                     ""
                 ]
             },
             "defines": [
-                "PLATFORMIO=50100",
+                "PLATFORMIO=50101",
                 "ARDUINO_AVR_MEGA2560",
                 "F_CPU=16000000L",
                 "ARDUINO_ARCH_AVR",

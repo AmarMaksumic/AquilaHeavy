@@ -1,36 +1,45 @@
 #include <Arduino.h>
 #include <Servo.h>
 
-class servoX {
-  Servo servo;
-  int pos = 0;
-  const float P = 1;
-  const float I = 1;
-  const float D = 1;
-  long previousTime = 0;
-  float lastError, cumulativeError = 0;
+Servo servoX;
+const float PX = 3;
+const float IX = 0;
+const float DX = 0.001;
+long previousTimeX = 0;
+float lastErrorX, cumulativeErrorX = 0;
 
-  public:
+void reset_servoX() {
+  servoX.write(89);
+}
 
-    void init(int pin) {
-      servo.attach(pin);
-    }
+void init_servoX(int pin) {
+  servoX.attach(pin);
+  reset_servoX();
+}
 
-    void align(float xTilt, float setPoint) {
-      long currentTime = millis();
-      long elapsedTime = currentTime - previousTime;
+float align_servoX(float xTilt, float setPoint) {
+  long currentTime = millis();
+  long elapsedTime = currentTime - previousTimeX;
 
-      float error = setPoint - xTilt;
+  float error = setPoint - xTilt;
 
-      cumulativeError += error * elapsedTime;
+  cumulativeErrorX += error * elapsedTime;
 
-      float rateError = (error - lastError) / elapsedTime;
+  float rateError = (error - lastErrorX) / elapsedTime;
 
-      float output = P * error + I * cumulativeError + D * rateError;
+  float output = PX * error + IX * cumulativeErrorX + DX * rateError;
 
-      lastError = error;
-      previousTime = currentTime;
+  lastErrorX = error;
+  previousTimeX = currentTime;
 
-      servo.write(output);
-    }
-};
+  output = 89 + (output*2);
+
+  if (output > 119) output = 119;
+  if (output < 59) output = 59;
+
+  Serial.println(output);
+
+  servoX.write(output);
+
+  return output;
+}

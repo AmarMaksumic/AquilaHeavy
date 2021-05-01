@@ -18,7 +18,7 @@
 #include <SPI.h>
 #include "memorysaver.h"
 
-int cam_pin = 10;
+int cam_pin = 7;
 int resolution = 2;
 
 ArduCAM myCAM(OV2640, cam_pin);

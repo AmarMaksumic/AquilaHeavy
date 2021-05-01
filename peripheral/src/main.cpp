@@ -2,30 +2,30 @@
 #include <servoX.hpp>
 #include <servoY.hpp>
 #include <gyro.hpp>
+#include <SoftwareSerial.h>
 
-servoX x;
-servoY y;
-gyro greek;
-float setPoint = 0;
+SoftwareSerial softSerial(10, 11);
+float test_vals[5] = {0, -2.14, 2.06, -5.345, 5.038};
+
+int time_step = 0;
 
 void setup() {
-  x.init(9);
-  y.init(10);
-  greek.init();
   Serial.begin(9600);
-  Serial.println('HI! I WILL SEND U DATA B!');
+  softSerial.begin(9600);
+  init_gyro();
+  init_servoX(8);
+  init_servoY(9);
+}
+
+float * update_test() {
+  static float euler[3] = {test_vals[1], 1, 0};
+  return euler;
 }
 
 void loop() {
-  greek.update();
-  int ax = greek.get_acc_x(), 
-  ay = greek.get_acc_y(), 
-  az = greek.get_acc_z(), 
-  gx = greek.get_gyro_x(), 
-  gy = greek.get_gyro_y(), 
-  gz = greek.get_gyro_z();
-  x.align(gx, 0);
-  y.align(gy, 0);
-  String data = "ax " + String(ax) + " ay " + String(ay) + " az " + String(az) + " gx " + String(gx) + " gy " + String(gy) + " gz " + String(gz); 
-  Serial.println(data);
+  float *gyro_vals;
+  gyro_vals = update_gyro();
+  float x_out = align_servoX(*(gyro_vals + 2) * 180/M_PI, 0);
+  float y_out = align_servoY(*(gyro_vals + 0) * 180/M_PI, 0);
+  delay(25);
 }
